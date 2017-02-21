@@ -1,9 +1,11 @@
 package easy.pkg1;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.io.PrintWriter;
 
 public class EASY1 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         //create new person object
         Person p1 = new Person();
         //create scanner object
@@ -29,6 +31,11 @@ public class EASY1 {
         
         //display entered information
         System.out.println(p1.outputString());
+        
+         try(PrintWriter out = new PrintWriter("C:\\Users\\Nicola\\Documents\\NetBeansProjects\\EASY 1\\src\\easy\\pkg1\\text.txt"))
+        {
+            out.println(p1.outputString());
+        }
         
         
         
